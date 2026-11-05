@@ -17,9 +17,12 @@ namespace RestaurantApp_Team_14_15_16
     {
         static List<Restaurant> restaurants = new List<Restaurant>
     {
-        new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
-        new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 }
+        new Restaurant { Name = "McDonal's", Type = "Fast Food", Rating = 4.2 },
+        new Restaurant { Name = "Tee Noi", Type = "Suki", Rating = 4.7 },
+        new Restaurant { Name = "SUSHIRO", Type = "Japanese", Rating = 4.8 },
+        new Restaurant { Name = "Burgerking", Type = "Fast Food", Rating = 4.1 },
+        new Restaurant { Name = "Bonus Suki", Type = "Suki", Rating = 4.5 },
+        new Restaurant { Name = "Ootoya", Type = "Japanese", Rating = 5.0 }
     };
 
         static void Main(string[] args)
@@ -58,7 +61,34 @@ namespace RestaurantApp_Team_14_15_16
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("Not completed");
+          
+            
+                Console.WriteLine("\n===== Add Restaurant =====");
+
+                // รับชื่อร้าน
+                Console.Write("Enter Restaurant Name: ");
+                string name = Console.ReadLine();
+
+                // รับประเภทร้าน
+                Console.Write("Enter Restaurant Type: ");
+                string type = Console.ReadLine();
+
+                // รับคะแนนร้าน
+                Console.Write("Enter Restaurant Rating: ");
+                double rating = Convert.ToDouble(Console.ReadLine());
+
+                // สร้าง Object และเพิ่มเข้า List
+                Restaurant newRestaurant = new Restaurant
+                {
+                    Name = name,
+                    Type = type,
+                    Rating = rating
+                };
+
+                restaurants.Add(newRestaurant);
+
+                Console.WriteLine("\nRestaurant added successfully!");
+            
         }
 
         // คน B รับผิดชอบ
